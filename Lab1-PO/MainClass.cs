@@ -5,15 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+//Hello World
 namespace Lab1_PO
 {
     public class MainClass
     {
-        StreamWriter sw = new StreamWriter("Users.txt", false, System.Text.Encoding.Default);
-        StreamReader sr = new StreamReader("Users.txt", System.Text.Encoding.Default);
-        string login;
+        static Stream myStream = File.Open(@"D:\My Heap\C# Projects\PO-project\Lab1-PO\Users.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+
+        StreamReader sr = new StreamReader(myStream);
         User u;
-        
+
         public bool IsUnic(string str)
         {
             while (sr.EndOfStream == false)
@@ -26,48 +27,53 @@ namespace Lab1_PO
         }
         public string Info(string str)
         {
-                while (sr.EndOfStream == false)
-                {
-                string s=sr.ReadLine();
+            while (sr.EndOfStream == false)
+            {
+                string s = sr.ReadLine();
                 if (s.Contains(str))
                 {
                     return s;
                 }
-                }
+            }
             return null;
         }
-        
+
+        /// <summary>Returns hash from string parameter.</summary>
+        /// <param name="pass">start value</param>
+        /// <returns>returns int hashcode</returns>
         public int hashfunc(string pass)
         {
             int hash = 0;
             for (int i = 1; i < pass.Length; i++)
-			{
+            {
                 hash = hash + pass[i] * pass[0];
 
-			}
+            }
             return hash;
 
         }
-        public void Register(string log,string pass)
+        public void Register(string log, string pass)
         {
-            List <string> accs = new List<string>();
-            if(IsUnic(log))
-            {       
+            
+            StreamWriter sw = new StreamWriter(myStream);
+            List<string> accs = new List<string>();
+            if (IsUnic(log))
+            {
                 int hash = hashfunc(pass);
                 string role = Console.ReadLine();
-                sw.WriteLine(log + " " + hash.ToString() + " " + role );
+                sw.WriteLine(log + " " + hash.ToString() + " " + role);
                 Console.WriteLine("Acc has created succesfully");
             }
         }
-        public bool Auth(string login,string pass)
+        public bool Auth(string login, string pass)
         {
             int hash = hashfunc(pass);
             if (IsUnic(login + hash.ToString()))
             {
                 string s = Info(login + hash.ToString());
-                if(s.Contains("Teacher"))
-                {   
-                    u = new Teacher();                           
+                if (s.Contains("Teacher"))
+                {
+                    u = new Teacher();
                 }
                 else
                     u = new Student();
@@ -77,38 +83,44 @@ namespace Lab1_PO
                 return false;
 
         }
-        public void Startmenu(string login,string pass,string func , string isunum)
+        public void Startmenu(string login, string pass, string func, string isunum)
         {
-               
-            if(func.Contains("reg"))
+
+            if (func.Contains("reg"))
             {
-             Register(login,pass);
+                Register(login, pass);
             }
             else
-            if(Auth(login,pass))
+            if (Auth(login, pass))
             {
-                if(func.Contains("read"))    
+                if (func.Contains("read"))
                 {
-                    using(StreamWriter sw = new StreamWriter(isunum + ".txt", false, System.Text.Encoding.Default))
-                        
-                    using(StreamReader sr = new StreamReader(isunum + ".txt", System.Text.Encoding.Default))
-                    u.readchat(sr);                       
+                    using (StreamReader sr = new StreamReader(isunum + ".txt", System.Text.Encoding.Default))
+                        u.readchat(sr);
                 }
                 if (func.Contains("write"))
                 {
                     using (StreamWriter sw = new StreamWriter(isunum + ".txt", false, System.Text.Encoding.Default))
 
                     using (StreamReader sr = new StreamReader(isunum + ".txt", System.Text.Encoding.Default))
-                        u.writemessage(sr,sw);
+                        u.writemessage(sr, sw);
                 }
             }
+
         }
-        
+
+       
+}
+          
+
+
+        /*
          public void  Main(string [] args)
         {
+        
 
             Startmenu(args[0],args[1],args[2],args[3]);   
         }
-        
+        */
     }
 }

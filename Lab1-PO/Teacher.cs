@@ -13,11 +13,12 @@ namespace Lab1_PO
         {
             while (sr.EndOfStream == false)
             {
-                 string s = sr.ReadLine();
+                string s = sr.ReadLine();
                 Console.WriteLine(s);
             }
 
         }
+
         public void writemessage(StreamReader sr, StreamWriter sw)
         {
             readchat(sr);

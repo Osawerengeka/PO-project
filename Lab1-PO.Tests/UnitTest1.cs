@@ -9,11 +9,19 @@ namespace Lab1_PO.Tests
         [TestMethod]
         public void hash1()
         {
-            string s = "wsdma";
-            int exp = 75;
+            string s = "kilo";
+            int exp = 34668;
             MainClass m = new MainClass();
             int a = m.hashfunc(s);
             Assert.AreEqual(exp,a);
+        }
+        [TestMethod]
+        public void Authchecklog()
+        {
+            string login = "250824";
+            MainClass m = new MainClass();
+            
+            Assert.IsTrue(m.IsUnic(login));
         }
     }
 }
