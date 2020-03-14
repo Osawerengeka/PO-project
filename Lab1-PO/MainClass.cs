@@ -53,7 +53,11 @@ namespace Lab1_PO
 
             }
             return hash;
-
+            
+        }
+        public int hashfunc(string pass,int a)
+        {
+            return pass.GetHashCode();
         }
         public void Register(string log, string pass)
         {
