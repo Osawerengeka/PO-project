@@ -10,11 +10,9 @@ namespace Lab1_PO
 {
     public class MainClass
     {
-
-
-
         static Stream myStream = File.Open(@"D:\My Heap\C# Projects\PO-project\Lab1-PO\Users.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
 
+        Schedule globalevents;
         StreamReader sr = new StreamReader(myStream);
         User u;
 
@@ -107,6 +105,11 @@ namespace Lab1_PO
 
                     using (StreamReader sr = new StreamReader(isunum + ".txt", System.Text.Encoding.Default))
                         u.writemessage(sr, sw);
+                }
+                if (func.Contains("Saw"))
+                { 
+                 u.
+                
                 }
             }
 

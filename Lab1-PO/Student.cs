@@ -9,7 +9,7 @@ namespace Lab1_PO
 {
     public class Student : User
     {
-        Schedule sch;
+        public Schedule sch;
         public void readchat(StreamReader sr)
         {
             while (sr.EndOfStream == false)
@@ -29,6 +29,18 @@ namespace Lab1_PO
         public void CreateEvent(Schedule.evnt e)
         {
             sch.addEvent(e);
+        }
+        public string SawEvents()
+        {
+            string all = "";
+            
+            foreach (var a in sch.sch)
+            {
+                all = a.day.ToString() + "." + a.month.ToString() + " " + a.def + "\n";
+            }
+
+            return all;
+
         }
     }
 }

@@ -11,9 +11,9 @@ namespace Lab1_PO
     {
         public struct evnt
         {
-            int day;
-            int month;
-            string def;
+            public int day { get; }
+            public int month { get; }
+            public string def { get; }
             public evnt(int day, int month, string def)
             {
                 this.day = day;
@@ -21,11 +21,13 @@ namespace Lab1_PO
                 this.def = def;          
             }
         }
-        public static List<evnt> sch = new List<evnt>(12);
-
+        public HashSet<evnt> sch = new HashSet<evnt>(12);
+        
         public void addEvent(evnt e)
         {           
+            
             sch.Add(e);    
         }
+ 
     }
 }
