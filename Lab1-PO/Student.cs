@@ -26,6 +26,7 @@ namespace Lab1_PO
             sw.WriteLine("S:" + " " + s);
 
         }
+
         public void CreateEvent(Schedule.evnt e)
         {
             sch.addEvent(e);
