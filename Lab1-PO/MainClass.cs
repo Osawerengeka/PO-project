@@ -82,10 +82,8 @@ namespace Lab1_PO
                 {
                     u = new Teacher();
                 }
-                else if(s.Contains("Student"))
-                    u = new Student();
                 else
-                    u = new Stuff();
+                    u = new Student();
                 return true;
             }
             else
