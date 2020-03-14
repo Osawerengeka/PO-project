@@ -42,6 +42,7 @@
     <Compile Include="MainClass.cs" />
     <Compile Include="Schedule.cs" />
     <Compile Include="Student.cs" />
+    <Compile Include="Stuff.cs" />
     <Compile Include="Teacher.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
