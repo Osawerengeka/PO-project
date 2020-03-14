@@ -8,8 +8,8 @@ namespace Lab1_PO
 {
     interface User
     {
-          void readchat(StreamReader sr);
-          void writemessage(StreamReader sr, StreamWriter sw);
+        void readchat(StreamReader sr);
+        void writemessage(StreamReader sr, StreamWriter sw);
 
     }
 }
