@@ -25,7 +25,7 @@ namespace Lab1_PO
             sw.WriteLine("S:" + " " + s);
 
         }
-        public void CreateEvent(Schedule fullsh)
+        public void CreateEvent()
         {
             
 
