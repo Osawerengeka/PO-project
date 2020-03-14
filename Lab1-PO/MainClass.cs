@@ -10,6 +10,9 @@ namespace Lab1_PO
 {
     public class MainClass
     {
+
+
+
         static Stream myStream = File.Open(@"D:\My Heap\C# Projects\PO-project\Lab1-PO\Users.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
 
         StreamReader sr = new StreamReader(myStream);

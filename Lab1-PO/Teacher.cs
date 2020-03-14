@@ -9,6 +9,7 @@ namespace Lab1_PO
 {
     public class Teacher : User
     {
+        Schedule sch;
         public void readchat(StreamReader sr)
         {
             while (sr.EndOfStream == false)
@@ -25,6 +26,9 @@ namespace Lab1_PO
             string s = Console.ReadLine();
             sw.WriteLine("T:" + " " + s);
         }
-
+        public void CreateEvent(Schedule.evnt e)
+        {
+            sch.addEvent(e);
+        }
     }
 }

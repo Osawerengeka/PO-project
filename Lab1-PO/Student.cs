@@ -9,6 +9,7 @@ namespace Lab1_PO
 {
     public class Student : User
     {
+        Schedule sch;
         public void readchat(StreamReader sr)
         {
             while (sr.EndOfStream == false)
@@ -25,11 +26,9 @@ namespace Lab1_PO
             sw.WriteLine("S:" + " " + s);
 
         }
-        public void CreateEvent()
+        public void CreateEvent(Schedule.evnt e)
         {
-            
-
-
+            sch.addEvent(e);
         }
     }
 }

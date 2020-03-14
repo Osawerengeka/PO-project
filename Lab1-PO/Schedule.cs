@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 using System.Runtime;
 namespace Lab1_PO
 {
-    class Schedule 
+    
+    public  class Schedule 
     {
-        struct evnt
+        public struct evnt
         {
             int day;
             int month;
@@ -20,11 +21,10 @@ namespace Lab1_PO
                 this.def = def;          
             }
         }
-        List<evnt> sch = new List<evnt>(12);
+        public static List<evnt> sch = new List<evnt>(12);
 
-        void addEvent(int day, int month, string def)
-        {
-            evnt e = new evnt(day,month,def);
+        public void addEvent(evnt e)
+        {           
             sch.Add(e);    
         }
     }
