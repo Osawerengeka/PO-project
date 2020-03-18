@@ -1,0 +1,9 @@
+[submodule "Submodule1"]
+	path = Submodule1
+	url = https://github.com/Osawerengeka/Submodule1
+[submodule "projsub"]
+	path = projsub
+	url = https://github.com/Osawerengeka/projsub
+[submodule "Submodule2"]
+	path = Submodule2
+	url = https://github.com/Osawerengeka/Submodule2
