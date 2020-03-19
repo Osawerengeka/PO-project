@@ -17,7 +17,6 @@ namespace Lab1_PO
                 string s = sr.ReadLine();
                 Console.WriteLine(s);
             }
-
         }
 
         public void writemessage(StreamReader sr, StreamWriter sw)

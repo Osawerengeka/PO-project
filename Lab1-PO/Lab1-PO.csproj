@@ -45,5 +45,10 @@
     <Compile Include="Teacher.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="SubModule">
+      <HintPath>..\projsub\bin\Debug\SubModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

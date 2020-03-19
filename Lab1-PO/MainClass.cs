@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+using SubModule;
 //Hello World
 namespace Lab1_PO
 {
@@ -44,13 +45,8 @@ namespace Lab1_PO
         /// <returns>returns int hashcode</returns>
         public int hashfunc(string pass)
         {
-            int hash = 0;
-            for (int i = 1; i < pass.Length; i++)
-            {
-                hash = hash + pass[i] * pass[0];
-
-            }
-            return hash;
+            Security p = new Security();
+            return p.hashfunc(pass);
             
         }
         public int hashfunc(string pass,int a)
@@ -109,11 +105,6 @@ namespace Lab1_PO
 
                     using (StreamReader sr = new StreamReader(isunum + ".txt", System.Text.Encoding.Default))
                         u.writemessage(sr, sw);
-                }
-                if (func.Contains("Saw"))
-                { 
-                 u.
-                
                 }
             }
 
