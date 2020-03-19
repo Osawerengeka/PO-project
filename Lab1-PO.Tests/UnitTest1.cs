@@ -11,6 +11,7 @@ namespace Lab1_PO.Tests
         {
             string s = "kilo";
             int exp = 34668;
+            int a;
             MainClass m = new MainClass();
             int a = m.hashfunc(s);
             Assert.AreEqual(exp,a);
